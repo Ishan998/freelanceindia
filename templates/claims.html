@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About The Job</title>
+    {% load static %}
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"rel="stylesheet">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'topclients' %}">Clients</a>
+      <a href="{% url 'feedback' %}">Contact</a>
+    </div>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font mx-5 font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <img src="{% static 'images/logo.jpg' %}" width="200px">
+           <!-- <span class="ml-3 text-xl">Tailblocks</span> -->
+         </a>
+         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+           <a class="mr-5 text-black hover:text-blue-900" href="{% url 'freelancerdashboard' %}">Jobs</a>
+           <a class="mr-5 text-black hover:text-blue-900" >Messages</a>
+           <a class="mr-5 text-black hover:text-blue-900">Response</a>
+           <a class="mr-5 text-black hover:text-blue-900" href="{% url 'myfeedbacks' %}">My Feedback</a>
+           <a class="mr-5 text-black hover:text-blue-900" href="/">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" >Logout</button>
+           </a>
+         </nav>
+        
+         <!-- add page to button onclick-->
+         
+      
+      </div>
+      </header>
+      <style>
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        #main {
+          transition: margin-left .5s;
+          padding: 16px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        </style>
+</head>
+<body>
+  <span style="font-size:30px;cursor:pointer;margin-left:20px;" onclick="openNav()">&#9776;</span>
+  <div id="main">
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <img  class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{% static 'images/task.jpg' %}">
+            <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                {%for i in data%}
+              {% comment %} <h2 class="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2> {% endcomment %}
+              <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{i.title}}</h1>
+              <div class="flex mb-4">
+                <span class="flex items-center">
+                  
+                  <span class="text-gray-600 ml-3">{{i.views}} views</span>
+                </span>
+                <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
+                  
+                </span>
+              </div>
+              <p class="leading-relaxed">{{i.message}}</p>
+              <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+                
+                
+              </div>
+              {% comment %} <a href="/claims/{{i.id}}" > {% endcomment %}
+                <form action="/claims/{{i.id}}" method="post">
+                  {% csrf_token %}
+              <div class="flex">
+                <span class="title-font font-medium text-2xl text-gray-900">₹{{i.price}}</span>
+                
+                
+                <button name="selectbtn" class="flex ml-auto text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-red-500 rounded">Select</button>
+                
+              </div>
+            {% comment %} </a> {% endcomment %}
+          </form>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
+      </div>
+      
+</body>
+<footer class="text-gray-600 body-font" style="border-top:green solid 5px">
+  <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <img src="{% static 'images/me/Ishan.jpeg' %}" width=100px style="border:orange solid 3px">
+        <span class="ml-3 text-xl">Ishan Srivastava</span>
+      </a>
+      <p class="mt-2 text-sm text-gray-500">An Innovation Addicted Personality</p>
+    </div>
+    <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+      
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Upcoming Features</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Loading Images</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Making More flexible </a>
+          </li>
+          
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Connections</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">About</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Contact Us</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">My Aim</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Problem recognised</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">An Opportunity</a>
+          </li>
+         
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="bg-blue-900">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="text-gray-500 text-sm text-center sm:text-left">© Ishan Srivastava
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <p>Connect With Me On Linkedin</p>
+        <a class="ml-3 text-gray-500" href="https://www.linkedin.com/in/ishan-srivastava-53397b1a1/">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+</html>
