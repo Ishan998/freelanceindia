@@ -30,3 +30,7 @@ Features:
 7) My views regarding the problem
 
 #Stay Tuned for Upcoming Showcases 😉
+
+#Main Page
+https://github.com/Ishan998/freelanceindia/assets/55241531/5ceed67c-d6cb-4441-9098-d41c47d3a671
+
