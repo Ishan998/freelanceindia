@@ -34,9 +34,9 @@ Features:
 # Main Page
 https://github.com/Ishan998/freelanceindia/assets/55241531/5ceed67c-d6cb-4441-9098-d41c47d3a671
 # Registeration 
-1) As a Freelancer
+# 1) As a Freelancer
 https://github.com/Ishan998/freelanceindia/assets/55241531/784e15d6-3e11-4929-8c9c-008b9b15df4a
-2) As a Client
+# 2) As a Client
 https://github.com/Ishan998/freelanceindia/assets/55241531/157dfe51-63be-4927-b3e5-7bd5230ee100
 # Freelancer Dashboard
 https://github.com/Ishan998/freelanceindia/assets/55241531/bbb6378b-bc5c-49c5-9560-c7a18230f5cd
