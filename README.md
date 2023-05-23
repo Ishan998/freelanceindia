@@ -57,7 +57,7 @@ This Table stores every registeration and use it for authentication
 
 Note: I had not used the Django Model Db ,as I wanted to integrate Db externally and learn how to make it more efficient by practice 
 
-################################################ THANK YOU 😊 ################################################### 
+##################################### THANK YOU 😊 ###################################### 
 
 
 
