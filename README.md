@@ -31,6 +31,33 @@ Features:
 
 #Stay Tuned for Upcoming Showcases 😉
 
-#Main Page
+# Main Page
 https://github.com/Ishan998/freelanceindia/assets/55241531/5ceed67c-d6cb-4441-9098-d41c47d3a671
+# Registeration 
+1) As a Freelancer
+https://github.com/Ishan998/freelanceindia/assets/55241531/784e15d6-3e11-4929-8c9c-008b9b15df4a
+2) As a Client
+https://github.com/Ishan998/freelanceindia/assets/55241531/157dfe51-63be-4927-b3e5-7bd5230ee100
+# Freelancer Dashboard
+https://github.com/Ishan998/freelanceindia/assets/55241531/bbb6378b-bc5c-49c5-9560-c7a18230f5cd
+# Client Dashboard and chechking the Applicants
+https://github.com/Ishan998/freelanceindia/assets/55241531/7f7271ae-6561-4664-8321-e8bf0c76d0ea
+# Adding the Job and Deleting the Job which will be displayed on Dashboard
+https://github.com/Ishan998/freelanceindia/assets/55241531/c2379af8-19cc-4ecc-b055-9d323538411e
+# Screenshots of Sqlite DB
+# 1) Authentication and Registeration
+![authdev](https://github.com/Ishan998/freelanceindia/assets/55241531/eafb70ff-cbbe-4f62-a24e-f9317533f77d)
+This Table stores every registeration and use it for authentication
+# 2) Feeding the Job Details which will be rendered to Freelancer Dashboard
+![job](https://github.com/Ishan998/freelanceindia/assets/55241531/f98cc76b-5c37-4488-9b2f-2bf6549417f9)
+# 3) People who claimed the job offered from clients
+![claimed](https://github.com/Ishan998/freelanceindia/assets/55241531/841ccccb-ada4-4591-b3a8-0b2ed3180d36)
+# 4) Feebback Submitted on the Website
+![feedback](https://github.com/Ishan998/freelanceindia/assets/55241531/aa128068-0ae2-4572-9e20-23f0853cd997)
+
+Note: I had not used the Django Model Db ,as I wanted to integrate Db externally and learn how to make it more efficient by practice 
+
+################################################ THANK YOU 😊 ################################################### 
+
+
 
